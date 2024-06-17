@@ -1,0 +1,13 @@
+{
+  "name": "node-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
