@@ -1,16 +1,23 @@
 const http = require("http");
+const fs = require("fs");
 const port = "3001";
 let app = http.createServer(function (req: any, res: any) {
   res.setHeader("Content-type", "application/json; charset=utf8");
   let { method, url } = req;
   if (method === "POST") {
-    console.log("111111");
     if (url === "/getData") {
-      console.log("22222222");
+      let ogj;
+      fs.readFile("./data.json", "utf8", (error: any, data1: any) => {
+        if (error) {
+          console.log(error);
+          return;
+        }
+        ogj = data1;
+      });
       let data = {
         code: 200,
+        data: ogj,
         msg: "测试",
-        content: "Hello World",
       };
       res.end(JSON.stringify(data));
     }

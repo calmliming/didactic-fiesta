@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "tsc": "tsc",
-    "start": "node dist/app.js"
+    "build": "tsc",
+    "dev": "node dist/app.js"
   },
   "keywords": [],
   "author": "",
