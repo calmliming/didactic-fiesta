@@ -6,20 +6,18 @@ let app = http.createServer(function (req: any, res: any) {
   let { method, url } = req;
   if (method === "POST") {
     if (url === "/getData") {
-      let ogj;
       fs.readFile("./data.json", "utf8", (error: any, data1: any) => {
         if (error) {
           console.log(error);
           return;
         }
-        ogj = data1;
+        let data = {
+          code: 200,
+          data: JSON.parse(data1),
+          msg: "测试",
+        };
+        res.end(JSON.stringify(data));
       });
-      let data = {
-        code: 200,
-        data: ogj,
-        msg: "测试",
-      };
-      res.end(JSON.stringify(data));
     }
   }
   // res.end('Hello World', )
